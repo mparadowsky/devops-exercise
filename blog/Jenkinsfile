@@ -13,7 +13,7 @@ node() {
     stage("Launching app") {
         withEnv(['VERSION='+ver]) {
             withCredentials([string(credentialsId: 'DATABASE_HOST', variable: 'DATABASE_HOST'), string(credentialsId: 'DATABASE_NAME', variable: 'DATABASE_NAME'), string(credentialsId: 'DATABASE_PASSWORD', variable: 'DATABASE_PASSWORD'), string(credentialsId: 'DATABASE_USERNAME', variable: 'DATABASE_USERNAME'), string(credentialsId: 'REDIS_URI', variable: 'REDIS_URI')]) {
-                kubernetesDeploy(enableConfigSubstitution: true, configs:"blog/kubernetes/**",kubeconfigId:"kubeconf") 
+                kubernetesDeploy(enableConfigSubstitution: true, configs:"blog/kubernetes/**",kubeconfigId:"kubeconfgcp") 
                 sh 'minikube service blog-svc'
             }
         }
