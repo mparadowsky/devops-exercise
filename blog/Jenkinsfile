@@ -2,7 +2,7 @@ node() {
     def myImage 
     def ver = sh (script: "git rev-parse --short HEAD | tr -d '\n'", returnStdout: true) 
     stage("Cloning repository") {
-        git 'https://github.com/mparadowsky/devops-exercise'
+        git branch: 'dev', url: 'https://github.com/mparadowsky/devops-exercise'
     }
     stage("Building image") {
         withEnv(['VERSION='+ver]) {
