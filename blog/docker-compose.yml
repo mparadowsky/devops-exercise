@@ -20,7 +20,7 @@ services:
     build: .
     ports:
       - '3000:3000'
-    image: "eu.gcr.io/terraform-301618/blog2:${VERSION}"
+    image: "eu.gcr.io/terraform-301618/blog:${VERSION}"
 
   traefik:
     restart: on-failure
