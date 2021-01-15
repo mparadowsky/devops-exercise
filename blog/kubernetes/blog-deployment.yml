@@ -21,27 +21,27 @@ spec:
         - name: DATABASE_HOST
           valueFrom: 
             secretKeyRef:
-              name: dbsecret
+              name: dbsecrets
               key: DATABASE_HOST
         - name: DATABASE_NAME
           valueFrom: 
             secretKeyRef:
-              name: dbsecret
+              name: dbsecrets
               key: DATABASE_NAME
         - name: DATABASE_PASSWORD
           valueFrom: 
             secretKeyRef:
-              name: dbsecret
+              name: dbsecrets
               key: DATABASE_PASSWORD
         - name: DATABASE_USERNAME
           valueFrom: 
             secretKeyRef:
-              name: dbsecret
+              name: dbsecrets
               key: DATABASE_USERNAME
         - name: REDIS_URI
           valueFrom: 
             secretKeyRef:
-              name: dbsecret
+              name: dbsecrets
               key: REDIS_URI
         ports:
           - containerPort: 3000
