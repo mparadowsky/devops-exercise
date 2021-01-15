@@ -19,14 +19,24 @@ spec:
         imagePullPolicy: Always
         env:
         - name: DATABASE_HOST
-          value: $DATABASE_HOST
+          valueFrom: 
+            name: dbsecret
+            key: DATABASE_HOST
         - name: DATABASE_NAME
-          value: $DATABASE_NAME
+          valueFrom: 
+            name: dbsecret
+            key: DATABASE_NAME
         - name: DATABASE_PASSWORD
-          value: $DATABASE_PASSWORD
+          valueFrom: 
+            name: dbsecret
+            key: DATABASE_PASSWORD
         - name: DATABASE_USERNAME
-          value: $DATABASE_USERNAME
+          valueFrom: 
+            name: dbsecret
+            key: DATABASE_USERNAME
         - name: REDIS_URI
-          value: $REDIS_URI
+          valueFrom: 
+            name: dbsecret
+            key: REDIS_URI
         ports:
           - containerPort: 3000
