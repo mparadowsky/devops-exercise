@@ -19,16 +19,19 @@ spec:
         env:
         - name: POSTGRES_PASSWORD
           valueFrom: 
-            name: dbsecret
-            key: DATABASE_PASSWORD
+            secretKeyRef:
+              name: dbsecret
+              key: DATABASE_PASSWORD
         - name: POSTGRES_USER
           valueFrom: 
-            name: dbsecret
-            key: DATABASE_USERNAME
+            secretKeyRef:
+              name: dbsecret
+              key: DATABASE_USERNAME
         - name: POSTGRES_DB
           valueFrom: 
-            name: dbsecret
-            key: DATABASE_NAME
+            secretKeyRef:
+              name: dbsecret
+              key: DATABASE_NAME
         ports:
           - containerPort: 5432
     
