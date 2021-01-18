@@ -13,9 +13,11 @@ spec:
       labels:
         app: blog
     spec:
+      imagePullSecrets:
+      - name: gcr-json-key
       containers:
       - name: blog
-        image: "eu.gcr.io/terraform-301618/blog:latest"
+        image: "eu.gcr.io/terraform-301618/blog:$VERSION"
         imagePullPolicy: Always
         env:
         - name: DATABASE_HOST
