@@ -13,8 +13,6 @@ spec:
       labels:
         app: blog
     spec:
-      imagePullSecrets:
-      - name: gcr-json-key
       containers:
       - name: blog
         image: "eu.gcr.io/terraform-301618/blog:$VERSION"
@@ -47,3 +45,5 @@ spec:
               key: REDIS_URI
         ports:
           - containerPort: 3000
+      imagePullSecrets:
+      - name: "gcr-json-key"
